@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071018">
+<title>Retirada E-3909 para Manutenção • CIC</title>
+<style>
+:root{--bg:#06111b;--panel:#0c1c29;--panel2:#11293a;--line:#31536a;--txt:#eef7ff;--muted:#9eb4c5;--green:#86df93;--yellow:#ffd267;--red:#ff9797;--blue:#71d0ff}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at top,#17354a,#07131e 45%,#04090e);color:var(--txt)}body{padding:7px}
+.app{max-width:1480px;margin:auto;display:grid;gap:12px}.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;box-shadow:0 14px 36px #0006}
+.hero{padding:18px;display:grid;grid-template-columns:1.15fr .85fr;gap:14px}.kicker{display:inline-flex;border:1px solid #76542f;background:#281c0f;color:#ffe0a9;border-radius:999px;padding:6px 10px;font-size:10px;font-weight:900;letter-spacing:.08em}
+h1{font-size:clamp(27px,4vw,42px);margin:8px 0 7px}.hero p{margin:0;color:var(--muted);line-height:1.5}.hero-side{border:1px solid #355a73;background:#081923;border-radius:17px;padding:13px}.memory{font-size:clamp(15px,2vw,20px);font-weight:950;line-height:1.55}.memory span{color:var(--yellow)}.back{display:inline-flex;text-decoration:none;color:#fff;border:1px solid #3b6078;background:#102838;border-radius:11px;padding:8px 10px;font-weight:850;margin-top:12px}
+.tabs{display:flex;gap:7px;flex-wrap:wrap;padding:11px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#091923f2;backdrop-filter:blur(8px);z-index:5}.tab{border:1px solid #365970;background:#0b2230;color:#fff;border-radius:12px;padding:9px 11px;font-weight:850;cursor:pointer}.tab.active{background:#6a421e;border-color:#d59c59}
+.view{display:none;padding:14px}.view.active{display:block}.grid2{display:grid;grid-template-columns:1.08fr .92fr;gap:12px}.box,.dcs{border:1px solid #315169;background:#081923;border-radius:17px;padding:14px}.dcs{background:#06141e;border-color:#41627a}
+.phase{font-size:10px;color:#ffc889;font-weight:900;letter-spacing:.08em}.subtle{color:var(--muted);font-size:12px}.stategrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.state{border:1px solid #31536a;background:#071824;border-radius:13px;padding:10px;min-height:76px}.state small{display:block;color:var(--muted);font-weight:800}.state b{display:block;margin-top:4px}.ok{color:#8df09c}.warn{color:#ffd36f}.bad{color:#ff9b9b}.info{color:#86d8ff}
+.gate{border:1px solid #655727;background:#211e0f;border-radius:13px;padding:11px;margin-top:10px}.gate strong{color:#ffe0a0}.route{display:flex;gap:7px;flex-wrap:wrap;align-items:center;padding:12px;border:1px solid #31536a;background:#071824;border-radius:14px;margin:8px 0}.node{padding:9px 10px;border:1px solid #3b6078;background:#0b2230;border-radius:11px;font-weight:900;font-size:12px}.arrow{font-weight:950;color:var(--blue)}.route .off{border-color:#875454;background:#2c1616}.route .on{border-color:#4d8958;background:#102819}
+.scenario{border:1px solid #315169;background:#081923;border-radius:15px;padding:13px;margin:10px 0}.options{display:grid;gap:7px}.btn{border:1px solid #3b6079;background:#102838;color:#fff;border-radius:11px;padding:9px 11px;font-weight:850;cursor:pointer;text-align:left}.confirm{display:none;border:1px solid #655727;background:#211e0f;border-radius:13px;padding:11px;margin-top:10px}.confirm.show{display:block}.feedback{display:none;margin-top:10px;border-radius:11px;padding:10px}.feedback.show{display:block}.feedback.yes{background:#12351c;border:1px solid #428a55}.feedback.no{background:#351718;border:1px solid #8f4949}
+.stepnav{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;margin:10px 0}.stepbtn{border:1px solid #31536a;background:#071824;color:#fff;border-radius:10px;padding:8px;font-weight:900;cursor:pointer}.stepbtn.active{border-color:#e0a462;background:#3a2814}.stepbtn.done{box-shadow:inset 0 0 0 1px #559565}
+.actionlist{display:grid;gap:6px;margin:10px 0}.action{display:grid;grid-template-columns:auto 1fr;gap:8px;border:1px solid #2e4e63;background:#06141e;border-radius:10px;padding:9px}.action.checked{border-color:#4f8c5a;background:#0d2716}.action input{margin-top:3px;transform:scale(1.15)}
+.timerbox{border:1px solid #6d5c2d;background:#211e10;border-radius:16px;padding:14px;margin-top:10px}.clock{font-size:28px;font-weight:950;color:#ffe1a0;margin:8px 0}.timerstate{font-size:12px;color:var(--muted)}.timer-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.rolegrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.role{border:1px solid #31536a;background:#071824;border-radius:14px;padding:11px}.critical{border:1px solid #705a28;background:#211d0d;border-radius:13px;padding:10px;margin:8px 0}.critical b{color:#ffe0a0}.scorebar{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;position:sticky;bottom:5px;background:#07131ee8;border:1px solid #31536a;border-radius:14px;padding:7px}.scorebar div{text-align:center;border:1px solid #2d4d62;background:#06131b;border-radius:10px;padding:7px}.scorebar b{display:block;font-size:20px}
+@media(max-width:1000px){.stategrid{grid-template-columns:1fr 1fr}.stepnav{grid-template-columns:repeat(5,1fr)}}
+@media(max-width:820px){.hero,.grid2,.rolegrid{grid-template-columns:1fr}}
+@media(max-width:600px){body{padding:4px}.view{padding:8px}.stategrid,.stepnav,.scorebar{grid-template-columns:1fr}.tab{font-size:11px}}
+</style>
+</head>
+<body>
+<div class="app">
+<section class="card hero">
+  <div>
+    <span class="kicker">🛠️ E-3909 • RETIRADA PARA MANUTENÇÃO • CIC</span>
+    <h1>Retirada de Operação da E-3909</h1>
+    <p>Treinamento baseado no checklist PE.REF.OPE.CCF.055-H Rev. 00. O foco é o raciocínio do operador de painel: reduzir inventário, transferir rotas, retirar energia, controlar pressão, preservar instrumentação crítica, conduzir purgas e reconhecer quando a torre ainda NÃO está liberada.</p>
+    <a class="back" href="./index.html">← E-3909 Concept</a>
+  </div>
+  <div class="hero-side">
+    <b>Modelo mental</b>
+    <div class="memory"><span>Inventário</span> → bypass → calor → F-3910 → flare → isolamento → purga → atmosfera → 24 h → RAS</div>
+    <p class="subtle">PURGADO ≠ LIBERADO PARA ABERTURA.</p>
+  </div>
+</section>
+
+<section class="card">
+<div class="tabs">
+<button class="tab active" data-tab="panel">1. Sala CIC</button>
+<button class="tab" data-tab="decision">2. Decisão + confirmação</button>
+<button class="tab" data-tab="map">3. Mapa de estados</button>
+<button class="tab" data-tab="purge">4. Purga dinâmica</button>
+<button class="tab" data-tab="fail">5. Falhas / impedimentos</button>
+<button class="tab" data-tab="roles">6. Campo × CIC</button>
+<button class="tab" data-tab="journey">7. Jornada 19 etapas</button>
+<button class="tab" data-tab="final">8. Avaliação final</button>
+</div>
+
+<div class="view active" data-view="panel">
+<div class="grid2">
+<div class="dcs">
+  <div class="phase">ESTADO INICIAL — E-3909 EM OPERAÇÃO</div>
+  <div class="stategrid">
+    <div class="state"><small>Controladores</small><b class="ok">AUTO / CAS</b></div>
+    <div class="state"><small>Inventário E-3909</small><b class="info">PRESENTE</b></div>
+    <div class="state"><small>Carga E-3908 → E-3909</small><b class="ok">ALINHADA</b></div>
+    <div class="state"><small>Bypass MCV-39428</small><b class="warn">FECHADO</b></div>
+    <div class="state"><small>Calor C-3922</small><b class="ok">ATIVO</b></div>
+    <div class="state"><small>J-3922</small><b class="ok">OPERANDO</b></div>
+    <div class="state"><small>Pressão</small><b class="info">PROCESSO</b></div>
+    <div class="state"><small>Instrumentação</small><b class="ok">EM SERVIÇO</b></div>
+    <div class="state"><small>Purga</small><b class="warn">NÃO INICIADA</b></div>
+    <div class="state"><small>RAS</small><b class="bad">PENDENTE</b></div>
+  </div>
+  <div class="gate"><strong>Primeiro gate:</strong> comunicar os impactos da retirada e assumir manualmente os controles previstos antes de alterar inventário/rotas.</div>
+</div>
+<div class="box">
+  <h3>O que o CIC precisa enxergar</h3>
+  <div class="gate"><strong>Inventário:</strong> reduzir ao máximo possível antes de consolidar a retirada da torre.</div>
+  <div class="gate"><strong>Rota:</strong> estabelecer MCV-39428 + FV-39203 antes de cortar MCV-39427.</div>
+  <div class="gate"><strong>Pressão:</strong> F-3910 primeiro; depois flare até equalizar; pressão permanece monitorada para evitar vácuo.</div>
+  <div class="gate"><strong>Purga:</strong> primeiro flare, depois atmosfera. As 24 h só começam com vapor confirmado nos vents/drenos.</div>
+  <div class="gate"><strong>Liberação:</strong> 24 h e purga encerrada ainda não significam abertura liberada; faltam checklist + SMS/SI + RAS.</div>
+</div>
+</div>
+</div>
+
+<div class="view" data-view="decision">
+<div class="box">
+<h2>Decisão + confirmação + impedimento</h2>
+<p>O estado vem antes da ação. Depois da decisão, o operador precisa indicar a confirmação que fecha o gate.</p>
+<div id="decisionList"></div>
+<div class="scorebar" id="decisionScore"></div>
+</div>
+</div>
+
+<div class="view" data-view="map">
+<div class="grid2">
+<div class="box">
+<h2>Mapa de carga / inventário</h2>
+<div class="route"><span class="node">E-3908</span><span class="arrow">→</span><span class="node">MCV-39427</span><span class="arrow">→</span><span class="node">E-3909</span></div>
+<div class="route"><span class="node">E-3908</span><span class="arrow">→</span><span class="node">MCV-39428</span><span class="arrow">→</span><span class="node">BYPASS E-3909</span></div>
+<div class="gate"><strong>Regra:</strong> BYPASS ESTABELECIDO ≠ TORRE ISOLADA. A continuidade da corrente e o isolamento da E-3909 são estados diferentes.</div>
+<div class="route"><span class="node">Inventário E-3909</span><span class="arrow">↓</span><span class="node">FV-39201 ↑ retirada</span><span class="arrow">→</span><span class="node">J-3922 RUN</span><span class="arrow">→</span><span class="node">perda de sucção</span><span class="arrow">→</span><span class="node">STOP</span></div>
+</div>
+<div class="box">
+<h2>Mapa de pressão</h2>
+<div class="route"><span class="node">PROCESSO</span><span class="arrow">→</span><span class="node">F-3910</span><span class="arrow">→</span><span class="node">FLARE</span><span class="arrow">→</span><span class="node">ATMOSFERA</span></div>
+<div class="gate"><strong>Instrumentação:</strong> analisadores e LTs são bloqueados na etapa prevista, mas os instrumentos de pressão permanecem disponíveis para monitorar e evitar vácuo.</div>
+</div>
+</div>
+</div>
+
+<div class="view" data-view="purge">
+<div class="grid2">
+<div class="box">
+<h2>Fase 1 — Purga para flare</h2>
+<div class="route"><span class="node">VAPOR</span><span class="arrow">→</span><span class="node">FUNDO E-3909</span><span class="arrow">→</span><span class="node">HC residual</span><span class="arrow">→</span><span class="node">PV-39259B</span><span class="arrow">→</span><span class="node">FLARE</span></div>
+<p>PV-39257, FFV-39202 e FV-39207, incluindo os respectivos contornos, ficam totalmente abertos conforme a etapa de purga.</p>
+<div class="gate"><strong>Evidência:</strong> acompanhar o aquecimento da linha da PV-39259B pela passagem de vapor.</div>
+</div>
+<div class="box">
+<h2>Fase 2 — Purga para atmosfera</h2>
+<div class="route"><span class="node">PV-39259B</span><span class="arrow">→</span><span class="node off">FECHAR / BLOQUEAR / RAQUETEAR</span></div>
+<div class="route"><span class="node">E-3909</span><span class="arrow">→</span><span class="node">VENTS / DRENOS</span><span class="arrow">→</span><span class="node">ATMOSFERA</span></div>
+<div class="timerbox">
+<div class="phase">CRONÔMETRO CONDICIONADO — SIMULAÇÃO DIDÁTICA</div>
+<div class="clock" id="clock">24:00 h</div>
+<div class="timerstate" id="timerState">AGUARDANDO confirmação de vapor nos vents e drenos.</div>
+<div class="timer-actions">
+<button class="btn" id="confirmSteam">✓ Confirmar vapor nos vents/drenos</button>
+<button class="btn" id="start24" disabled>▶ Iniciar 24 h</button>
+<button class="btn" id="finish24" disabled>⏭ Simular conclusão das 24 h</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="view" data-view="fail">
+<div class="box">
+<h2>Falhas / impedimentos operacionais</h2>
+<div class="critical"><b>FV-39203 ainda não totalmente aberta</b><p>Não completar o corte de carga antes da condição prevista para evitar abertura da PSV-39172 do C-3923.</p></div>
+<div class="critical"><b>J-3922 parada antes da perda de sucção</b><p>O checklist manda manter a bomba em operação até perder sucção e então pará-la.</p></div>
+<div class="critical"><b>Pressão bloqueada junto com LTs/analisadores</b><p>Impedimento crítico: a pressão deve permanecer monitorada para evitar vácuo.</p></div>
+<div class="critical"><b>Atmosfera com PV-39259B ainda aberta para flare</b><p>A mudança de rota exige fechar via SDCD, bloquear no campo e instalar a raquete.</p></div>
+<div class="critical"><b>24 h iniciadas ao abrir vapor</b><p>Contagem inválida. O início é somente quando houver vapor saindo pelos vents e drenos.</p></div>
+<div class="critical"><b>Purga encerrada = liberação</b><p>Incorreto. Ainda são necessários checklist operacional, SMS/SI e RAS.</p></div>
+</div>
+</div>
+
+<div class="view" data-view="roles">
+<div class="rolegrid">
+<div class="role"><h3>🖥️ CIC</h3><ul><li>colocar controladores em MAN;</li><li>coordenar redução de inventário e desvio de propano;</li><li>estabelecer bypass e controlar MCV/FV envolvidas;</li><li>cortar calor via HS-39203/XV-39203;</li><li>conduzir equalização com F-3910 e despressurização para flare;</li><li>manter pressão disponível para vigilância de vácuo;</li><li>acompanhar rotas flare → atmosfera e evidência térmica da purga;</li><li>não considerar a torre liberada sem RAS.</li></ul></div>
+<div class="role"><h3>🧰 Campo</h3><ul><li>confirmar bloqueios físicos e contornos previstos;</li><li>drenar água dos C-3921;</li><li>bloquear analisadores/LTs conforme checklist, preservando pressão;</li><li>executar plano de raquete nos pontos indicados;</li><li>alinhar vapor de purga e abrir/monitorar vents e drenos;</li><li>bloquear/raquetear PV-39259B na mudança para atmosfera;</li><li>acompanhar condensado e apoiar SMS/SI para liberação.</li></ul></div>
+</div>
+</div>
+
+<div class="view" data-view="journey">
+<div class="box">
+<h2>Jornada completa — 19 etapas</h2>
+<p>Consulta e fixação do checklist original. Marque as ações estudadas; o progresso é salvo localmente.</p>
+<div class="stepnav" id="stepNav"></div>
+<div id="stepCard"></div>
+</div>
+</div>
+
+<div class="view" data-view="final">
+<div class="box">
+<h2>Avaliação final — sem sequência exposta</h2>
+<p>Os estados aparecem em ordem embaralhada e sem a jornada das 19 etapas visível.</p>
+<div id="finalList"></div>
+<div class="scorebar" id="finalScore"></div>
+</div>
+</div>
+</section>
+</div>
+
+<script>
+const STEPS=[{"n": 1, "title": "Avisar COTUR, TEU/TM e TEU/TE", "phase": "PREPARAÇÃO", "actions": ["Avisar, via rádio e/ou telefone, o corte da produção de propano e propeno.", "Avisar, via rádio e/ou telefone, o corte do consumo de V4."], "decision": "A retirada começa pela coordenação dos impactos externos da manobra.", "confirm": "Interfaces informadas sobre os cortes previstos."}, {"n": 2, "title": "Colocar os controles da torre em manual", "phase": "PREPARAÇÃO", "actions": ["Mudar o modo operacional dos controladores de AUTO para MAN e de CAS para MAN."], "decision": "Antes de alterar inventário e rotas, retirar as malhas da condição automática/cascata prevista no checklist.", "confirm": "Controladores relevantes confirmados em MAN."}, {"n": 3, "title": "Reduzir o máximo possível o nível da torre", "phase": "INVENTÁRIO", "actions": ["Desviar o Propano para GLP.", "Aumentar a retirada de fundo através da FV-39201."], "decision": "Reduzir o inventário antes de consolidar o isolamento da carga.", "confirm": "Inventário reduzido ao máximo possível conforme a estratégia da manobra."}, {"n": 4, "title": "Desviar carga da torre", "phase": "ROTA DE CARGA", "actions": ["Manter MCV-39429 e MCV-39432 fechadas.", "Abrir totalmente FV-39203 para evitar abertura da PSV-39172 do C-3923.", "Abrir MCV-39428 para desviar o fundo da E-3908.", "Fechar MCV-39427 para cortar o fornecimento de carga para a torre.", "Fechar MCV-39430, fundo da E-3909."], "decision": "Estabelecer primeiro o contorno e a condição da FV-39203; só então retirar a E-3909 do caminho normal.", "confirm": "Bypass estabelecido, carga da E-3909 cortada e fundo isolado."}, {"n": 5, "title": "Cortar vapor para o C-3922", "phase": "ENERGIA TÉRMICA", "actions": ["Via SDCD, atuar na HS-39203 fechando a XV-39203.", "Cortar totalmente o calor para a torre."], "decision": "Retirar a fonte térmica depois da preparação da rota e inventário.", "confirm": "XV-39203 fechada e calor da torre cortado."}, {"n": 6, "title": "Aliviar F-3913 para F-3910", "phase": "PRESSÃO", "actions": ["Via SDCD, abrir PIC-39259 e equalizar a torre com F-3910, evitando grande quantidade de gás para o flare."], "decision": "Usar a equalização com F-3910 antes de depender do flare para toda a despressurização.", "confirm": "Equalização E-3909/F-3913 com F-3910 estabelecida conforme checklist."}, {"n": 7, "title": "Manter J-3922 em operação até perder sucção", "phase": "INVENTÁRIO", "actions": ["Manter J-3922 em operação até perder sucção.", "Parar J-3922 quando perder sucção."], "decision": "Não antecipar a parada da bomba enquanto ainda existe inventário removível pela rota prevista.", "confirm": "Perda de sucção observada e J-3922 parada."}, {"n": 8, "title": "Despressurizar o sistema para flare", "phase": "PRESSÃO", "actions": ["Via SDCD, abrir PIC-39259.", "Retirar todo hidrocarboneto leve do sistema até equalizar pressões."], "decision": "Manter a despressurização enquanto o sistema ainda não estiver equalizado.", "confirm": "Pressões equalizadas e hidrocarbonetos leves removidos pela rota prevista."}, {"n": 9, "title": "Bloquear e drenar água de refrigeração dos C-3921", "phase": "ISOLAMENTO", "actions": ["Fechar válvulas de entrada e saída dos trocadores.", "Abrir todos os drenos dos trocadores."], "decision": "Retirar e drenar o sistema de água de refrigeração dos condensadores.", "confirm": "Entrada/saída bloqueadas e drenos dos C-3921 abertos."}, {"n": 10, "title": "Bloqueio da instrumentação", "phase": "INSTRUMENTAÇÃO", "actions": ["Bloquear tomadas do analisador e LTs da E-3909.", "Bloquear tomadas do analisador e LTs do F-3913.", "NÃO bloquear os instrumentos de pressão.", "Monitorar a pressão do sistema para evitar vácuo (pressão negativa)."], "decision": "Diferenciar instrumentos que serão bloqueados das medições de pressão que precisam permanecer disponíveis.", "confirm": "Analisadores/LTs bloqueados e pressão ainda disponível para vigilância contra vácuo."}, {"n": 11, "title": "Aplicar plano de raquete", "phase": "ISOLAMENTO", "actions": ["Aplicar o plano de raquete na PV-39259A no campo.", "Aplicar o plano de raquete na XV-39199 do F-3921.", "Aplicar o plano de raquete nas MCV-39427 e MCV-39430."], "decision": "Executar os isolamentos físicos especificados antes das purgas subsequentes.", "confirm": "Pontos do plano de raquete confirmados."}, {"n": 12, "title": "Purgar o sistema da E-3909 para o flare", "phase": "PURGA → FLARE", "actions": ["Injetar vapor de purga no fundo da E-3909.", "Abrir totalmente, via SDCD e campo, PV-39257 e seu contorno.", "Abrir totalmente, via SDCD e campo, FFV-39202 e seu contorno.", "Abrir totalmente, via SDCD e campo, FV-39207 e seu contorno."], "decision": "Na primeira fase de purga, manter a rota dirigida ao flare e abrir os caminhos previstos para varrer o sistema.", "confirm": "Vapor de purga estabelecido e válvulas/contornos previstos totalmente abertos."}, {"n": 13, "title": "Monitorar temperatura da linha da PV-39259B para flare", "phase": "PURGA → FLARE", "actions": ["Verificar o aquecimento da linha pela passagem de vapor.", "Usar essa evidência para certificar que todo HC tenha sido purgado conforme checklist."], "decision": "Não encerrar a fase para flare somente por tempo; observar a resposta térmica indicada pelo procedimento.", "confirm": "Aquecimento da linha observado e condição de purga de HC confirmada conforme checklist."}, {"n": 14, "title": "Purgar o sistema da E-3909 para atmosfera", "phase": "PURGA → ATMOSFERA", "actions": ["Abrir e monitorar vents e drenos do sistema.", "Fechar PV-39259B, saída para flare, via SDCD e bloquear no campo.", "Instalar raquete na PV-39259B para que a purga se estenda até o dreno da válvula."], "decision": "A mudança de destino flare → atmosfera exige fechamento/bloqueio/raqueteamento da PV-39259B e acompanhamento dos vents/drenos.", "confirm": "Rota para flare isolada e purga para atmosfera estabelecida pelos vents/drenos."}, {"n": 15, "title": "Proceder a purga por 24 horas", "phase": "PURGA 24 h", "actions": ["Manter a purga durante 24 horas.", "Iniciar a contagem somente a partir do momento em que estiver saindo vapor pelos vents e drenos do sistema."], "decision": "A abertura do vapor não inicia automaticamente as 24 h; o gate é vapor confirmado nos vents/drenos.", "confirm": "Vapor confirmado nos vents/drenos e período de 24 h cumprido."}, {"n": 16, "title": "Cortar a purga", "phase": "FINALIZAÇÃO DA PURGA", "actions": ["Cortar o vapor.", "Fechar as válvulas de injeção de vapor."], "decision": "Encerrar a fonte de purga somente após o período previsto.", "confirm": "Vapor cortado e válvulas de injeção fechadas."}, {"n": 17, "title": "Manter drenos e vents abertos", "phase": "CONDICIONAMENTO FINAL", "actions": ["Manter drenos e vents abertos.", "Monitorar drenagem de condensado."], "decision": "Purga cortada não significa fechar o sistema; vents/drenos permanecem abertos conforme checklist.", "confirm": "Vents/drenos abertos e condensado acompanhado."}, {"n": 18, "title": "Aplicar checklist operacional", "phase": "LIBERAÇÃO", "actions": ["Preencher todos os itens do checklist anexo."], "decision": "A condição operacional precisa ser formalmente verificada antes da liberação.", "confirm": "Checklist operacional preenchido."}, {"n": 19, "title": "Acionar SMS/SI para liberação", "phase": "LIBERAÇÃO", "actions": ["Solicitar a emissão do RAS para liberar a abertura."], "decision": "PURGADO ≠ LIBERADO. A abertura depende da etapa formal com SMS/SI e RAS.", "confirm": "RAS emitido para liberação da abertura."}];
+const CASES=[{"ref": "3–4", "state": ["Inventário da E-3909 ainda elevado", "MCV-39428 fechada", "MCV-39427 aberta", "FV-39203 ainda na condição anterior"], "q": "Qual é a melhor lógica para avançar?", "opts": ["Reduzir o inventário e estabelecer o contorno, incluindo FV-39203 totalmente aberta, antes de fechar a carga pela MCV-39427.", "Fechar MCV-39427 imediatamente e depois abrir MCV-39428.", "Cortar o calor primeiro e deixar o desvio de carga para depois."], "ok": 0, "cq": "Qual impedimento deve estar removido antes de cortar a carga?", "copts": ["O bypass precisa estar estabelecido e a FV-39203 na condição prevista para evitar atuação da PSV-39172 do C-3923.", "A J-3922 já precisa estar parada.", "Os instrumentos de pressão já precisam estar bloqueados."], "cok": 0}, {"ref": "4", "state": ["MCV-39428 aberta", "MCV-39427 ainda aberta", "FV-39203 parcialmente aberta", "Operador pretende cortar carga"], "q": "Pode fechar MCV-39427 neste estado?", "opts": ["Ainda não; a FV-39203 deve estar totalmente aberta conforme o checklist antes de completar a retirada de carga.", "Sim; a posição da FV-39203 não interfere nessa transição.", "Sim, desde que MCV-39430 esteja aberta."], "ok": 0, "cq": "Qual resposta confirma o gate?", "copts": ["FV-39203 totalmente aberta, bypass estabelecido e depois MCV-39427/39430 na condição prescrita.", "Somente MCV-39427 fechada.", "Somente MCV-39428 aberta."], "cok": 0}, {"ref": "6–8", "state": ["Calor cortado", "F-3913 em equalização com F-3910", "J-3922 ainda operando", "Pressão ainda não equalizada"], "q": "Qual sequência mental deve orientar o painel?", "opts": ["Usar a equalização prevista, manter J-3922 até perder sucção e continuar despressurizando enquanto as pressões não estiverem equalizadas.", "Parar J-3922 imediatamente e iniciar purga para atmosfera.", "Bloquear instrumentos de pressão antes de continuar a despressurização."], "ok": 0, "cq": "O que encerra o gate da J-3922?", "copts": ["Perda de sucção observada, seguida da parada da bomba.", "Nível baixo estimado pelo operador.", "Equalização completa de pressão."], "cok": 0}, {"ref": "10", "state": ["Analisadores bloqueados", "LTs bloqueados", "Pressão ainda em queda", "Equipe sugere bloquear também os instrumentos de pressão"], "q": "Qual decisão é correta?", "opts": ["Manter os instrumentos de pressão disponíveis para monitorar e evitar vácuo/pressão negativa.", "Bloquear toda instrumentação para completar o isolamento.", "Manter apenas os LTs e bloquear a pressão."], "ok": 0, "cq": "Qual confirmação é necessária?", "copts": ["Analisadores/LTs bloqueados, mas pressão ainda visível e sendo acompanhada.", "Todos os instrumentos sem indicação.", "Somente PIC-39259 em MAN."], "cok": 0}, {"ref": "12–13", "state": ["Vapor de purga entrando pelo fundo", "Rota para flare estabelecida", "PV-39257 / FFV-39202 / FV-39207 e contornos alinhados", "Temperatura da linha da PV-39259B ainda sem resposta clara"], "q": "Pode considerar a fase para flare encerrada?", "opts": ["Ainda não; o checklist manda acompanhar o aquecimento da linha da PV-39259B como evidência da passagem de vapor/purga de HC.", "Sim; basta abrir o vapor de purga.", "Sim; basta abrir PV-39257."], "ok": 0, "cq": "Que evidência deve ser observada?", "copts": ["Aquecimento da linha da PV-39259B pela passagem de vapor.", "F-3913 com nível de 50%.", "ΔP da E-3909 em zero."], "cok": 0}, {"ref": "14", "state": ["Purga para flare concluída", "PV-39259B ainda aberta para flare", "Vents/drenos prontos para abertura"], "q": "Pode iniciar a fase para atmosfera?", "opts": ["Não; antes é preciso fechar PV-39259B via SDCD, bloquear no campo e instalar a raquete conforme o checklist.", "Sim; basta abrir vents e drenos.", "Sim; desde que J-3922 esteja parada."], "ok": 0, "cq": "Qual estado confirma a mudança de rota?", "copts": ["Rota para flare isolada pela PV-39259B e purga saindo por vents/drenos para atmosfera.", "PIC-39259 aberto para F-3910.", "C-3922 novamente aquecido."], "cok": 0}, {"ref": "15", "state": ["Vapor de purga foi aberto há 20 min", "Ainda não há vapor confirmado em todos os vents/drenos", "Operador quer iniciar cronômetro de 24 h"], "q": "A contagem é válida?", "opts": ["Não; as 24 h começam somente quando estiver saindo vapor pelos vents e drenos do sistema.", "Sim; começa no instante de abertura do vapor.", "Sim; começa após fechar PV-39259B."], "ok": 0, "cq": "Qual é o gate que habilita o cronômetro?", "copts": ["Confirmação de vapor saindo pelos vents e drenos.", "Perda de sucção da J-3922.", "Temperatura do topo abaixo da condição normal."], "cok": 0}, {"ref": "16–17", "state": ["24 h cumpridas", "Vapor de purga cortado", "Equipe propõe fechar vents e drenos imediatamente"], "q": "Qual decisão segue o checklist?", "opts": ["Manter vents e drenos abertos e acompanhar a drenagem de condensado.", "Fechar todos para evitar entrada de ar.", "Reabrir a rota para flare."], "ok": 0, "cq": "O que deve ser acompanhado?", "copts": ["Drenagem de condensado.", "Nível de refluxo da torre.", "Vazão de V4."], "cok": 0}, {"ref": "18–19", "state": ["Purga encerrada", "Vents/drenos abertos", "Checklist ainda não preenchido", "RAS ainda não emitido"], "q": "A E-3909 está liberada para abertura?", "opts": ["Não; ainda faltam checklist operacional e acionamento de SMS/SI para emissão do RAS.", "Sim; 24 h de purga encerram a manobra.", "Sim; basta a pressão estar equalizada."], "ok": 0, "cq": "Qual confirmação fecha o treinamento?", "copts": ["Checklist preenchido e RAS emitido para liberar a abertura.", "Somente sistema sem pressão.", "Somente plano de raquete aplicado."], "cok": 0}];
+
+const tabs=[...document.querySelectorAll('.tab')], views=[...document.querySelectorAll('.view')];
+tabs.forEach(t=>t.onclick=()=>{tabs.forEach(x=>x.classList.remove('active'));views.forEach(v=>v.classList.remove('active'));t.classList.add('active');document.querySelector(`[data-view="${t.dataset.tab}"]`).classList.add('active')});
+
+function shuffle(a){return a.map((v,i)=>({v,i})).sort(()=>Math.random()-.5)}
+
+let stats={d:0,c:0,e:0};
+function updateDecisionScore(){
+  const n=stats.d+stats.c+stats.e, p=Math.round((stats.d+stats.c)/Math.max(1,n)*100);
+  document.getElementById('decisionScore').innerHTML=`<div><b>${stats.d}</b><small>decisões</small></div><div><b>${stats.c}</b><small>confirmações</small></div><div><b>${stats.e}</b><small>erros</small></div><div><b>${p}%</b><small>precisão</small></div>`;
+}
+function renderDecisionSet(){
+  const root=document.getElementById('decisionList'); root.innerHTML='';
+  CASES.forEach((s,i)=>{
+    const d=document.createElement('div'); d.className='scenario';
+    d.innerHTML=`<div class="phase">ETAPA(S) ${s.ref}</div><h3>${i+1}. Estado apresentado</h3><ul>${s.state.map(x=>`<li>${x}</li>`).join('')}</ul><p><b>${s.q}</b></p><div class="options act"></div><div class="confirm"><div class="phase">CONFIRMAÇÃO DO GATE</div><p><b>${s.cq}</b></p><div class="options conf"></div></div><div class="feedback"></div>`;
+    let ad=false,cd=false;
+    shuffle(s.opts).forEach(o=>{const b=document.createElement('button');b.className='btn';b.textContent=o.v;b.onclick=()=>{if(ad)return;ad=true;const good=o.i===s.ok;good?stats.d++:stats.e++;const f=d.querySelector('.feedback');f.className='feedback show '+(good?'yes':'no');f.textContent=good?'Decisão coerente. Agora confirme o gate.':'Ainda existe um impedimento ou a decisão não corresponde ao estado apresentado.';d.querySelector('.confirm').classList.add('show');updateDecisionScore()};d.querySelector('.act').appendChild(b)});
+    shuffle(s.copts).forEach(o=>{const b=document.createElement('button');b.className='btn';b.textContent=o.v;b.onclick=()=>{if(cd)return;cd=true;const good=o.i===s.cok;good?stats.c++:stats.e++;const f=d.querySelector('.feedback');f.className='feedback show '+(good?'yes':'no');f.textContent=good?'Gate confirmado.':'Confirmação insuficiente para avançar.';updateDecisionScore()};d.querySelector('.conf').appendChild(b)});
+    root.appendChild(d);
+  });
+}
+renderDecisionSet(); updateDecisionScore();
+
+const pkey='e3909-retirada-cic-v1';let prog={};try{prog=JSON.parse(localStorage.getItem(pkey)||'{}')}catch(e){}
+function saveProg(){localStorage.setItem(pkey,JSON.stringify(prog))}
+let current=0;
+function stepDone(i){const s=STEPS[i]; return s.actions.every((_,j)=>prog[s.n+'-'+j])}
+function renderStepNav(){
+  const n=document.getElementById('stepNav');n.innerHTML='';
+  STEPS.forEach((s,i)=>{const b=document.createElement('button');b.className='stepbtn '+(i===current?'active ':'')+(stepDone(i)?'done':'');b.textContent=s.n;b.title=s.title;b.onclick=()=>{current=i;renderStepNav();renderStep()};n.appendChild(b)})
+}
+function renderStep(){
+  const s=STEPS[current];
+  document.getElementById('stepCard').innerHTML=`<div class="box"><div class="phase">ETAPA ${s.n} • ${s.phase}</div><h2>${s.title}</h2><div class="actionlist">${s.actions.map((a,j)=>`<label class="action ${prog[s.n+'-'+j]?'checked':''}"><input type="checkbox" data-k="${s.n+'-'+j}" ${prog[s.n+'-'+j]?'checked':''}><span>${a}</span></label>`).join('')}</div><div class="gate"><strong>Decisão CIC:</strong> ${s.decision}</div><div class="gate"><strong>Confirmação:</strong> ${s.confirm}</div></div>`;
+  document.querySelectorAll('#stepCard input').forEach(x=>x.onchange=()=>{prog[x.dataset.k]=x.checked;saveProg();x.closest('.action').classList.toggle('checked',x.checked);renderStepNav()});
+}
+renderStepNav();renderStep();
+
+let steamConfirmed=false, timerStarted=false;
+const confirmSteam=document.getElementById('confirmSteam'), start24=document.getElementById('start24'), finish24=document.getElementById('finish24'), timerState=document.getElementById('timerState'), clock=document.getElementById('clock');
+confirmSteam.onclick=()=>{steamConfirmed=true;start24.disabled=false;timerState.textContent='Vapor confirmado nos vents/drenos. Gate habilitado para iniciar a contagem.';confirmSteam.disabled=true};
+start24.onclick=()=>{if(!steamConfirmed)return;timerStarted=true;finish24.disabled=false;start24.disabled=true;clock.textContent='24:00 h';timerState.textContent='CONTAGEM VÁLIDA — simulação didática iniciada após confirmação do gate.'};
+finish24.onclick=()=>{if(!timerStarted)return;clock.textContent='00:00 h';finish24.disabled=true;timerState.textContent='24 h concluídas na simulação. Próximo estado: cortar vapor e manter vents/drenos abertos.'};
+
+let fs={ok:0,err:0,n:0};
+function updateFinal(){
+ const p=Math.round(fs.ok/Math.max(1,fs.n)*100);
+ document.getElementById('finalScore').innerHTML=`<div><b>${fs.ok}</b><small>acertos</small></div><div><b>${fs.err}</b><small>erros</small></div><div><b>${fs.n}/${CASES.length}</b><small>respondidas</small></div><div><b>${p}%</b><small>precisão</small></div>`;
+}
+function renderFinal(){
+ const root=document.getElementById('finalList'); root.innerHTML='';
+ [...CASES].sort(()=>Math.random()-.5).forEach((s,i)=>{
+   const d=document.createElement('div');d.className='scenario';
+   d.innerHTML=`<h3>${i+1}. Estado operacional</h3><ul>${s.state.map(x=>`<li>${x}</li>`).join('')}</ul><p><b>${s.q}</b></p><div class="options"></div><div class="feedback"></div>`;
+   shuffle(s.opts).forEach(o=>{const b=document.createElement('button');b.className='btn';b.textContent=o.v;b.onclick=()=>{if(d.dataset.done)return;d.dataset.done='1';fs.n++;const good=o.i===s.ok;good?fs.ok++:fs.err++;const f=d.querySelector('.feedback');f.className='feedback show '+(good?'yes':'no');f.textContent=good?'Decisão compatível com o checklist.':'Reavalie o estado e o gate ainda aberto.';updateFinal()};d.querySelector('.options').appendChild(b)});
+   root.appendChild(d);
+ });
+}
+renderFinal();updateFinal();
+</script>
+</body>
+</html>

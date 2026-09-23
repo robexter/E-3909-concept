@@ -1,0 +1,35 @@
+E-3909 CONCEPT — PATCH RETIRADA PARA MANUTENÇÃO V2
+
+Base:
+Checklist PE.REF.OPE.CCF.055-H Rev.00
+Retirada de Operação da E-3909 para Manutenção
+
+Arquivos:
+- retirada-e3909-manutencao.html  -> ADICIONAR
+- sw.js                           -> SUBSTITUIR
+- ATALHO-INDEX-E3909.html         -> BLOCO PARA INSERIR NO index.html
+
+IMPORTANTE:
+O index.html atual da E-3909 contém a imagem principal embutida em base64.
+Para preservar 100% dessa imagem e a one-page existente, este patch NÃO regrava o index inteiro.
+
+No GitHub:
+1. Adicione retirada-e3909-manutencao.html na raiz.
+2. Substitua sw.js pelo sw.js deste patch.
+3. Abra index.html em edição.
+4. Localize o fechamento da seção "Atalhos técnicos" e, imediatamente ANTES de:
+   <section class="panel" id="panel">
+   cole o conteúdo de ATALHO-INDEX-E3909.html.
+5. Commit changes.
+6. Abra:
+   https://robexter.github.io/E-3909-concept/?v=2
+
+Treinamento:
+1. Sala CIC
+2. Decisão + confirmação
+3. Mapa de estados
+4. Purga dinâmica / cronômetro condicionado 24 h
+5. Falhas / impedimentos
+6. Campo × CIC
+7. Jornada 19 etapas
+8. Avaliação final
