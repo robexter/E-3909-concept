@@ -1,4 +1,4 @@
-const CACHE_NAME = 'e3909-concept-v2-retirada-manutencao';
+const CACHE_NAME = 'e3909-concept-v2-retirada-manutencao-concept-v5-52-mobile-20261015';
 
 const APP_SHELL = [
   './',
